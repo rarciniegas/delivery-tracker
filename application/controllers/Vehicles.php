@@ -29,27 +29,25 @@
         $this->load->view('templates/footer');
       } else {
         
-        // Get username
-        $username = $this->input->post('vehicle_');
-        // Get and encrypt the password
-        $password = md5($this->input->post('password'));
-        // Login user
-        $user_id = $this->user_model->login($vehicle_name, $license);
+        // Get vehicle_name
+        $vehicle_name = $this->input->post('vehicle_name');
+        // Login vehicle
+        $vehicle_id = $this->vehicle_model->login($vehicle_name,$license);
         if($vehicle_id){
           // Create session
-          $user_data = array(
+          $vehicle_data = array(
             'vehicle_id' => $vehicle_id,
             'vehicle_name' => $vehicle_name,
             'logged_in' => true
           );
-          $this->session->set_userdata($user_data);
+          $this->session->set_vehicledata($vehicle_data);
           // Set message
-          $this->session->set_flashdata('user_loggedin', 'You are now logged in');
-          redirect('posts');
+          $this->session->set_flashdata('vehicle_loggedin', 'vehicle is now logged in');
+          redirect('home');
         } else {
           // Set message
           $this->session->set_flashdata('login_failed', 'Login is invalid');
-          redirect('users/login');
+          redirect('vehicles/login');
         }		
       }
     }

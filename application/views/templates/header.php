@@ -13,7 +13,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url(); ?>">ciBlog</a>
+        <a class="navbar-brand" href="<?php echo base_url(); ?>">Tracker</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url(); ?>users/logout">Logout</a>
+                    <a class="nav-link" href="<?php echo base_url(); ?>vehicles/logout">Logout</a>
                 </li>
         </ul>
     </div>

@@ -1,19 +1,19 @@
-<div class="container">
+<?php echo validation_errors(); ?>
 
-    <form class="form-signin" action="login.php" method="post" enctype="multipart/form-data">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label class="item_label">Vehicle Name</label>
-        <input type="text" name="vehicle_name" value="" class="form-control" autofocus/>
-        <label class="item_label">license</label>
-        <input type="text" name="license" value="" class="form-control"/>
+<?php echo form_open_multipart('vehicles/login'); ?>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<h1 class="text-center"><?= $title; ?></h1>
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <a href="register.php" class="btn btn-default btn-lg btn-block" role="button">Register</a>
-    </form>
-
-</div> <!-- /container -->
+			<div class="form-group">
+				<label>Vehicle name</label>
+				<input type="text" class="form-control" name="vehicle_name" placeholder="Vehicle name">
+			</div>
+			<div class="form-group">
+				<label>License</label>
+				<input type="text" class="form-control" name="license" placeholder="License">
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">Submit</button>
+		</div>
+	</div>
+<?php echo form_close(); ?>
